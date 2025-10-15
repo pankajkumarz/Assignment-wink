@@ -37,10 +37,10 @@ Local-pulse/
   - Bulk operations
   - Department management
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Frontend (Mobile Apps)
-- **Framework**: Flutter 3.35.6
+- **Framework**: Flutter
 - **State Management**: BLoC Pattern
 - **Architecture**: Clean Architecture
 
