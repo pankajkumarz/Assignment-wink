@@ -2,7 +2,7 @@
 
 Local Pulse is a comprehensive civic engagement ecosystem designed to bridge the gap between citizens and local authorities through transparent, efficient issue reporting and tracking.
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 Local-pulse/
@@ -15,7 +15,7 @@ Local-pulse/
 └── README.md                    # This file
 ```
 
-## 📱 Applications
+##  Applications
 
 ### Citizen App (`local_pulse_citizen`)
 - **Purpose**: Primary interface for citizens to report and track civic issues
@@ -60,7 +60,7 @@ Local-pulse/
 - `image_picker`: Photo capture
 - `dartz`: Functional programming
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Flutter SDK 3.35.6 or higher
@@ -114,11 +114,11 @@ cd local_pulse_authority
 flutter run
 ```
 
-## 📋 Development Status
+##  Development Status
 
 This project is currently in active development. The foundation has been established with:
 
-✅ **Completed:**
+ **Completed:**
 - Project structure setup
 - Clean architecture implementation
 - Core domain entities
@@ -126,19 +126,19 @@ This project is currently in active development. The foundation has been establi
 - Basic UI framework
 - Dual app architecture
 
-🚧 **In Progress:**
+ **In Progress:**
 - Authentication system
 - Issue reporting functionality
 - Map integration
 - Real-time tracking
 
-📅 **Planned:**
+ **Planned:**
 - WhatsApp integration
 - Multi-language support
 - Analytics dashboard
 - Performance optimization
 
-## 🏗️ Architecture
+##  Architecture
 
 The project follows Clean Architecture principles with clear separation of concerns:
 
@@ -163,7 +163,7 @@ lib/
     └── widgets/            # Reusable UI components
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -171,17 +171,17 @@ lib/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+##  License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is just a hackathon project
 
-## 📞 Support
+##  Support
 
 For support and questions:
 - Create an issue in the repository
 - Contact the development team
 
-## 🎯 Vision
+##  Vision
 
 Local Pulse aims to create meaningful civic impact by:
 - Improving transparency between citizens and authorities
@@ -191,5 +191,3 @@ Local Pulse aims to create meaningful civic impact by:
 - Building stronger community engagement
 
 ---
-
-**Built with ❤️ for better civic engagement**
