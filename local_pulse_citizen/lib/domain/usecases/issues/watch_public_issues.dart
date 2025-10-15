@@ -1,3 +1,4 @@
+import '../../../core/utils/typedef.dart';
 import '../../entities/issue.dart';
 import '../../repositories/issue_repository.dart';
 import '../usecase.dart';
@@ -8,7 +9,7 @@ class WatchPublicIssues extends StreamUseCaseWithoutParams<List<Issue>> {
   final IssueRepository _repository;
 
   @override
-  Stream<List<Issue>> call() {
+  ResultStream<List<Issue>> call() {
     return _repository.watchPublicIssues();
   }
 }

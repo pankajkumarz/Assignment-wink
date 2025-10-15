@@ -5,14 +5,14 @@ import '../../entities/issue.dart';
 import '../../repositories/issue_repository.dart';
 import '../usecase.dart';
 
-class CreateIssue extends UseCase<String, CreateIssueParams> {
+class CreateIssue extends UseCase<Issue, CreateIssueParams> {
   const CreateIssue(this._repository);
 
   final IssueRepository _repository;
 
   @override
-  ResultFuture<String> call(CreateIssueParams params) async {
-    return _repository.createIssue(issue: params.issue);
+  ResultFuture<Issue> call(CreateIssueParams params) async {
+    return _repository.createIssue(params.issue);
   }
 }
 

@@ -1,7 +1,14 @@
+// Temporarily comment out API keys import for demo
+// import '../../../../api_keys.dart';
+
 class AppConstants {
   // App Information
   static const String appName = 'Local Pulse';
   static const String appVersion = '1.0.0';
+  
+  // API Keys (demo values for now)
+  static const String googleMapsApiKey = 'demo_google_maps_key';
+  static const String whatsappApiToken = 'demo_whatsapp_token';
   
   // Firebase Collections
   static const String usersCollection = 'users';

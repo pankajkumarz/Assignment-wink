@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -49,21 +40,45 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'demo-web-api-key',
+    appId: '1:123456789:web:demo',
+    messagingSenderId: '123456789',
+    projectId: 'local-pulse-demo',
+    authDomain: 'local-pulse-demo.firebaseapp.com',
+    storageBucket: 'local-pulse-demo.appspot.com',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCTdyLjBtIN-0EZvM-Qtk3k83uN9ySAV_I',
-    appId: '1:867347271611:android:adb691b2a0ee13c29afe9e',
-    messagingSenderId: '867347271611',
-    projectId: 'local-pulse-8e073',
-    storageBucket: 'local-pulse-8e073.firebasestorage.app',
+    apiKey: 'demo-android-api-key',
+    appId: '1:123456789:android:demo',
+    messagingSenderId: '123456789',
+    projectId: 'local-pulse-demo',
+    storageBucket: 'local-pulse-demo.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDLwwDR2JgmGxIECmgu3uncGASE953DI9Q',
-    appId: '1:867347271611:ios:11d95b8ccf032bfb9afe9e',
-    messagingSenderId: '867347271611',
-    projectId: 'local-pulse-8e073',
-    storageBucket: 'local-pulse-8e073.firebasestorage.app',
-    iosBundleId: 'com.localpulse.citizen.localPulseCitizen',
+    apiKey: 'demo-ios-api-key',
+    appId: '1:123456789:ios:demo',
+    messagingSenderId: '123456789',
+    projectId: 'local-pulse-demo',
+    storageBucket: 'local-pulse-demo.appspot.com',
+    iosBundleId: 'com.localpulse.citizen',
   );
 
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'demo-macos-api-key',
+    appId: '1:123456789:macos:demo',
+    messagingSenderId: '123456789',
+    projectId: 'local-pulse-demo',
+    storageBucket: 'local-pulse-demo.appspot.com',
+    iosBundleId: 'com.localpulse.citizen',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'demo-windows-api-key',
+    appId: '1:123456789:windows:demo',
+    messagingSenderId: '123456789',
+    projectId: 'local-pulse-demo',
+  );
 }

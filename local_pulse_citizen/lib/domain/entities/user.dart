@@ -11,6 +11,7 @@ class User extends Equatable {
   final UserPreferences preferences;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final bool isActive;
 
   const User({
     required this.id,
@@ -23,6 +24,7 @@ class User extends Equatable {
     required this.preferences,
     required this.createdAt,
     required this.updatedAt,
+    this.isActive = true,
   });
 
   @override

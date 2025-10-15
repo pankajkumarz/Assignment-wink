@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Copy this file to android_keys.xml and replace with your actual keys -->
+    <string name="google_maps_api_key">your_google_maps_api_key_here</string>
+    
+    <!-- Firebase Configuration -->
+    <string name="firebase_api_key">your_firebase_api_key_here</string>
+    <string name="firebase_project_id">your_firebase_project_id_here</string>
+    <string name="firebase_app_id">your_firebase_app_id_here</string>
+</resources>

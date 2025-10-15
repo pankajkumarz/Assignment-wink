@@ -50,5 +50,5 @@ class GeoLocation extends Equatable {
 
   Map<String, dynamic> toJson() => toMap();
   
-  factory GeoLocation.fromJson(Map<String, dynamic> json) => fromMap(json);
+  factory GeoLocation.fromJson(Map<String, dynamic> json) => GeoLocation.fromMap(json);
 }
