@@ -1,8 +1,0 @@
-{
-  "environment": "development",
-  "debug_mode": true,
-  "api_base_url": "https://api-dev.localpulse.app",
-  "firebase_project_id": "local-pulse-dev",
-  "enable_analytics": false,
-  "enable_crashlytics": false
-}
