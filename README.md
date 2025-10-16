@@ -18,42 +18,41 @@
 ##  Hackathon Journey - 48 Hours of Innovation
 
 ### Day 1: Foundation & Core Features (24 hours)
-** Morning (0-8 hours)**
-- ✅ Project architecture setup with Clean Architecture
-- ✅ Firebase integration and authentication
-- ✅ Dual-app structure (Citizen + Authority)
-- ✅ Basic UI/UX design system
 
-** Afternoon (8-16 hours)**
-- ✅ Issue reporting system with photo capture
-- ✅ Real-time location services
-- ✅ Firebase Firestore integration
-- ✅ State management with BLoC pattern
+-  Project architecture setup with Clean Architecture
+-  Firebase integration and authentication
+-  Dual-app structure (Citizen + Authority)
+-  Basic UI/UX design system
 
-** Evening (16-24 hours)**
-- ✅ Authority dashboard development
-- ✅ Issue management workflows
-- ✅ Alert system implementation
-- ✅ Multi-language support (4 languages)
+
+-  Issue reporting system with photo capture
+-  Real-time location services
+-  Firebase Firestore integration
+-  State management with BLoC pattern
+
+-  Authority dashboard development
+-  Issue management workflows
+-  Alert system implementation
+-  Multi-language support (4 languages)
 
 ### Day 2: Polish & Advanced Features (24 hours)
-** Morning (24-32 hours)**
-- ✅ Emergency response system
-- ✅ Analytics dashboard for authorities
-- ✅ Advanced filtering and search
-- ✅ Notification system
+** 
+-  Emergency response system
+-  Analytics dashboard for authorities
+-  Advanced filtering and search
+-  Notification system
 
 ** Afternoon **
-- ✅ Security implementation & API key protection
-- ✅ Demo data service for testing
-- ✅ Comprehensive error handling
-- ✅ Performance optimizations
+-  Security implementation & API key protection
+-  Demo data service for testing
+-  Comprehensive error handling
+-  Performance optimizations
 
 ** Final Push (40-48 hours)**
-- ✅ Documentation & setup guides
-- ✅ Testing & bug fixes
-- ✅ Deployment preparation
-- ✅ Demo presentation ready
+-  Documentation & setup guides
+-  Testing & bug fixes
+-  Deployment preparation
+-  Demo presentation ready
 
 ##  What We Built
 
