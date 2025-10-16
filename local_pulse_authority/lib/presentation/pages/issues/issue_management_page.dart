@@ -35,7 +35,7 @@ class _IssueManagementPageState extends State<IssueManagementPage>
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => di.sl<IssuesBloc>()
-        ..add(const PublicIssuesWatchRequested()),
+        ..add(PublicIssuesWatchRequested()),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Issue Management'),
@@ -147,7 +147,7 @@ class _IssueManagementPageState extends State<IssueManagementPage>
                         ElevatedButton(
                           onPressed: () {
                             context.read<IssuesBloc>().add(
-                                  const PublicIssuesWatchRequested(),
+                                  PublicIssuesWatchRequested(),
                                 );
                           },
                           child: const Text('Retry'),
@@ -220,7 +220,7 @@ class _IssueManagementPageState extends State<IssueManagementPage>
 
     return RefreshIndicator(
       onRefresh: () async {
-        context.read<IssuesBloc>().add(const PublicIssuesWatchRequested());
+        context.read<IssuesBloc>().add(PublicIssuesWatchRequested());
       },
       child: ListView.builder(
         padding: const EdgeInsets.all(16),
@@ -232,7 +232,14 @@ class _IssueManagementPageState extends State<IssueManagementPage>
             child: IssueCard(
               issue: issue,
               onTap: () => _showIssueActions(context, issue),
-              showActions: true,
+              onStatusChanged: (newStatus) {
+                context.read<IssuesBloc>().add(
+                  IssueStatusUpdateRequested(
+                    issueId: issue.id,
+                    newStatus: newStatus,
+                  ),
+                );
+              },
             ),
           );
         },

@@ -6,14 +6,16 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fr.dart';
 import 'app_localizations_hi.dart';
 
 // ignore_for_file: type=lint
 
-/// Callers can lookup localized strings with an instance of AppLocalizations
-/// returned by `AppLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of S
+/// returned by `S.of(context)`.
 ///
-/// Applications need to include `AppLocalizations.delegate()` in their app's
+/// Applications need to include `S.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
@@ -21,8 +23,8 @@ import 'app_localizations_hi.dart';
 /// import 'l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: AppLocalizations.localizationsDelegates,
-///   supportedLocales: AppLocalizations.supportedLocales,
+///   localizationsDelegates: S.localizationsDelegates,
+///   supportedLocales: S.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -59,20 +61,19 @@ import 'app_localizations_hi.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the AppLocalizations.supportedLocales
+/// be consistent with the languages listed in the S.supportedLocales
 /// property.
-abstract class AppLocalizations {
-  AppLocalizations(String locale)
+abstract class S {
+  S(String locale)
       : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  static S? of(BuildContext context) {
+    return Localizations.of<S>(context, S);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<S> delegate = _SDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -95,134 +96,28 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
+    Locale('es'),
+    Locale('fr'),
     Locale('hi')
   ];
 
-  /// The name of the application
+  /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
   /// **'Local Pulse'**
-  String get appName;
+  String get appTitle;
 
-  /// The tagline of the application
+  /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Connecting Citizens & Authorities'**
-  String get appTagline;
+  /// **'Welcome to Local Pulse'**
+  String get welcomeTitle;
 
-  /// No description provided for @signIn.
+  /// No description provided for @welcomeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Sign In'**
-  String get signIn;
-
-  /// No description provided for @signUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign Up'**
-  String get signUp;
-
-  /// No description provided for @signOut.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign Out'**
-  String get signOut;
-
-  /// No description provided for @email.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get email;
-
-  /// No description provided for @password.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get password;
-
-  /// No description provided for @confirmPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Password'**
-  String get confirmPassword;
-
-  /// No description provided for @name.
-  ///
-  /// In en, this message translates to:
-  /// **'Full Name'**
-  String get name;
-
-  /// No description provided for @age.
-  ///
-  /// In en, this message translates to:
-  /// **'Age'**
-  String get age;
-
-  /// No description provided for @phone.
-  ///
-  /// In en, this message translates to:
-  /// **'Phone'**
-  String get phone;
-
-  /// No description provided for @city.
-  ///
-  /// In en, this message translates to:
-  /// **'City'**
-  String get city;
-
-  /// No description provided for @forgotPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Forgot Password?'**
-  String get forgotPassword;
-
-  /// No description provided for @dontHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an account?'**
-  String get dontHaveAccount;
-
-  /// No description provided for @alreadyHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Already have an account?'**
-  String get alreadyHaveAccount;
-
-  /// No description provided for @createAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Create Account'**
-  String get createAccount;
-
-  /// No description provided for @agreeToTerms.
-  ///
-  /// In en, this message translates to:
-  /// **'I agree to the Terms of Service and Privacy Policy'**
-  String get agreeToTerms;
-
-  /// No description provided for @home.
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
-
-  /// No description provided for @myReports.
-  ///
-  /// In en, this message translates to:
-  /// **'My Reports'**
-  String get myReports;
-
-  /// No description provided for @map.
-  ///
-  /// In en, this message translates to:
-  /// **'Map'**
-  String get map;
-
-  /// No description provided for @profile.
-  ///
-  /// In en, this message translates to:
-  /// **'Profile'**
-  String get profile;
+  /// **'Report civic issues and help improve your community'**
+  String get welcomeSubtitle;
 
   /// No description provided for @reportIssue.
   ///
@@ -230,11 +125,17 @@ abstract class AppLocalizations {
   /// **'Report Issue'**
   String get reportIssue;
 
-  /// No description provided for @reportIssueDescription.
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Actions'**
+  String get quickActions;
+
+  /// No description provided for @reportIssueDes.
   ///
   /// In en, this message translates to:
   /// **'Report a civic problem'**
-  String get reportIssueDescription;
+  String get reportIssueDes;
 
   /// No description provided for @viewMap.
   ///
@@ -242,335 +143,65 @@ abstract class AppLocalizations {
   /// **'View Map'**
   String get viewMap;
 
-  /// No description provided for @viewMapDescription.
+  /// No description provided for @viewMapDesc.
   ///
   /// In en, this message translates to:
   /// **'See issues in your area'**
-  String get viewMapDescription;
+  String get viewMapDesc;
 
-  /// No description provided for @trackReports.
+  /// No description provided for @myIssues.
   ///
   /// In en, this message translates to:
-  /// **'Track Reports'**
-  String get trackReports;
+  /// **'My Issues'**
+  String get myIssues;
 
-  /// No description provided for @trackReportsDescription.
+  /// No description provided for @myIssuesDesc.
   ///
   /// In en, this message translates to:
-  /// **'Track your submissions'**
-  String get trackReportsDescription;
+  /// **'Track your reports'**
+  String get myIssuesDesc;
 
-  /// No description provided for @alerts.
+  /// No description provided for @profile.
   ///
   /// In en, this message translates to:
-  /// **'Alerts'**
-  String get alerts;
+  /// **'Profile'**
+  String get profile;
 
-  /// No description provided for @alertsDescription.
+  /// No description provided for @profileDesc.
   ///
   /// In en, this message translates to:
-  /// **'View civic alerts'**
-  String get alertsDescription;
+  /// **'Manage your account'**
+  String get profileDesc;
 
-  /// No description provided for @dailyLife.
+  /// No description provided for @recentActivity.
   ///
   /// In en, this message translates to:
-  /// **'Daily Life'**
-  String get dailyLife;
+  /// **'Recent Activity'**
+  String get recentActivity;
 
-  /// No description provided for @emergency.
+  /// No description provided for @noRecentActivity.
   ///
   /// In en, this message translates to:
-  /// **'Emergency'**
-  String get emergency;
+  /// **'No recent activity'**
+  String get noRecentActivity;
 
-  /// No description provided for @general.
+  /// No description provided for @home.
   ///
   /// In en, this message translates to:
-  /// **'General'**
-  String get general;
+  /// **'Home'**
+  String get home;
 
-  /// No description provided for @potholes.
+  /// No description provided for @map.
   ///
   /// In en, this message translates to:
-  /// **'Potholes'**
-  String get potholes;
-
-  /// No description provided for @sewerageIssues.
-  ///
-  /// In en, this message translates to:
-  /// **'Sewerage Issues'**
-  String get sewerageIssues;
-
-  /// No description provided for @streetLighting.
-  ///
-  /// In en, this message translates to:
-  /// **'Street Lighting'**
-  String get streetLighting;
-
-  /// No description provided for @wasteManagement.
-  ///
-  /// In en, this message translates to:
-  /// **'Waste Management'**
-  String get wasteManagement;
-
-  /// No description provided for @waterSupply.
-  ///
-  /// In en, this message translates to:
-  /// **'Water Supply'**
-  String get waterSupply;
-
-  /// No description provided for @roadMaintenance.
-  ///
-  /// In en, this message translates to:
-  /// **'Road Maintenance'**
-  String get roadMaintenance;
-
-  /// No description provided for @trafficSignals.
-  ///
-  /// In en, this message translates to:
-  /// **'Traffic Signals'**
-  String get trafficSignals;
-
-  /// No description provided for @publicTransport.
-  ///
-  /// In en, this message translates to:
-  /// **'Public Transport'**
-  String get publicTransport;
-
-  /// No description provided for @roadAccident.
-  ///
-  /// In en, this message translates to:
-  /// **'Road Accident'**
-  String get roadAccident;
-
-  /// No description provided for @fireEmergency.
-  ///
-  /// In en, this message translates to:
-  /// **'Fire Emergency'**
-  String get fireEmergency;
-
-  /// No description provided for @medicalEmergency.
-  ///
-  /// In en, this message translates to:
-  /// **'Medical Emergency'**
-  String get medicalEmergency;
-
-  /// No description provided for @naturalDisaster.
-  ///
-  /// In en, this message translates to:
-  /// **'Natural Disaster'**
-  String get naturalDisaster;
-
-  /// No description provided for @crimeIncident.
-  ///
-  /// In en, this message translates to:
-  /// **'Crime Incident'**
-  String get crimeIncident;
-
-  /// No description provided for @infrastructureCollapse.
-  ///
-  /// In en, this message translates to:
-  /// **'Infrastructure Collapse'**
-  String get infrastructureCollapse;
-
-  /// No description provided for @publicFacilities.
-  ///
-  /// In en, this message translates to:
-  /// **'Public Facilities'**
-  String get publicFacilities;
-
-  /// No description provided for @parksRecreation.
-  ///
-  /// In en, this message translates to:
-  /// **'Parks & Recreation'**
-  String get parksRecreation;
-
-  /// No description provided for @noisePollution.
-  ///
-  /// In en, this message translates to:
-  /// **'Noise Pollution'**
-  String get noisePollution;
-
-  /// No description provided for @airPollution.
-  ///
-  /// In en, this message translates to:
-  /// **'Air Pollution'**
-  String get airPollution;
-
-  /// No description provided for @illegalConstruction.
-  ///
-  /// In en, this message translates to:
-  /// **'Illegal Construction'**
-  String get illegalConstruction;
-
-  /// No description provided for @publicSafety.
-  ///
-  /// In en, this message translates to:
-  /// **'Public Safety'**
-  String get publicSafety;
-
-  /// No description provided for @other.
-  ///
-  /// In en, this message translates to:
-  /// **'Other'**
-  String get other;
-
-  /// No description provided for @low.
-  ///
-  /// In en, this message translates to:
-  /// **'Low'**
-  String get low;
-
-  /// No description provided for @medium.
-  ///
-  /// In en, this message translates to:
-  /// **'Medium'**
-  String get medium;
-
-  /// No description provided for @high.
-  ///
-  /// In en, this message translates to:
-  /// **'High'**
-  String get high;
-
-  /// No description provided for @emergencyPriority.
-  ///
-  /// In en, this message translates to:
-  /// **'Emergency'**
-  String get emergencyPriority;
-
-  /// No description provided for @submitted.
-  ///
-  /// In en, this message translates to:
-  /// **'Submitted'**
-  String get submitted;
-
-  /// No description provided for @acknowledged.
-  ///
-  /// In en, this message translates to:
-  /// **'Acknowledged'**
-  String get acknowledged;
-
-  /// No description provided for @inProgress.
-  ///
-  /// In en, this message translates to:
-  /// **'In Progress'**
-  String get inProgress;
-
-  /// No description provided for @resolved.
-  ///
-  /// In en, this message translates to:
-  /// **'Resolved'**
-  String get resolved;
-
-  /// No description provided for @closed.
-  ///
-  /// In en, this message translates to:
-  /// **'Closed'**
-  String get closed;
-
-  /// No description provided for @rejected.
-  ///
-  /// In en, this message translates to:
-  /// **'Rejected'**
-  String get rejected;
-
-  /// No description provided for @issueTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Title'**
-  String get issueTitle;
-
-  /// No description provided for @issueTitleHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Brief description of the issue'**
-  String get issueTitleHint;
-
-  /// No description provided for @detailedDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Detailed Description'**
-  String get detailedDescription;
-
-  /// No description provided for @detailedDescriptionHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Provide more details about the issue'**
-  String get detailedDescriptionHint;
-
-  /// No description provided for @selectLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Location'**
-  String get selectLocation;
-
-  /// No description provided for @useCurrentLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Use Current Location'**
-  String get useCurrentLocation;
-
-  /// No description provided for @selectOnMap.
-  ///
-  /// In en, this message translates to:
-  /// **'Select on Map'**
-  String get selectOnMap;
-
-  /// No description provided for @photos.
-  ///
-  /// In en, this message translates to:
-  /// **'Photos'**
-  String get photos;
-
-  /// No description provided for @addPhotos.
-  ///
-  /// In en, this message translates to:
-  /// **'Add photos to help authorities understand the issue better'**
-  String get addPhotos;
-
-  /// No description provided for @camera.
-  ///
-  /// In en, this message translates to:
-  /// **'Camera'**
-  String get camera;
-
-  /// No description provided for @gallery.
-  ///
-  /// In en, this message translates to:
-  /// **'Gallery'**
-  String get gallery;
-
-  /// No description provided for @submitReport.
-  ///
-  /// In en, this message translates to:
-  /// **'Submit Report'**
-  String get submitReport;
-
-  /// No description provided for @settings.
-  ///
-  /// In en, this message translates to:
-  /// **'Settings'**
-  String get settings;
+  /// **'Map'**
+  String get map;
 
   /// No description provided for @editProfile.
   ///
   /// In en, this message translates to:
   /// **'Edit Profile'**
   String get editProfile;
-
-  /// No description provided for @appearance.
-  ///
-  /// In en, this message translates to:
-  /// **'Appearance'**
-  String get appearance;
-
-  /// No description provided for @language.
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
 
   /// No description provided for @notifications.
   ///
@@ -584,203 +215,23 @@ abstract class AppLocalizations {
   /// **'Privacy & Security'**
   String get privacySecurity;
 
-  /// No description provided for @about.
-  ///
-  /// In en, this message translates to:
-  /// **'About'**
-  String get about;
-
-  /// No description provided for @theme.
-  ///
-  /// In en, this message translates to:
-  /// **'Theme'**
-  String get theme;
-
-  /// No description provided for @light.
-  ///
-  /// In en, this message translates to:
-  /// **'Light'**
-  String get light;
-
-  /// No description provided for @dark.
-  ///
-  /// In en, this message translates to:
-  /// **'Dark'**
-  String get dark;
-
-  /// No description provided for @systemDefault.
-  ///
-  /// In en, this message translates to:
-  /// **'System Default'**
-  String get systemDefault;
-
-  /// No description provided for @pushNotifications.
-  ///
-  /// In en, this message translates to:
-  /// **'Push Notifications'**
-  String get pushNotifications;
-
-  /// No description provided for @emailNotifications.
-  ///
-  /// In en, this message translates to:
-  /// **'Email Notifications'**
-  String get emailNotifications;
-
-  /// No description provided for @whatsappNotifications.
-  ///
-  /// In en, this message translates to:
-  /// **'WhatsApp Notifications'**
-  String get whatsappNotifications;
-
-  /// No description provided for @alertNotifications.
-  ///
-  /// In en, this message translates to:
-  /// **'Alert Notifications'**
-  String get alertNotifications;
-
-  /// No description provided for @changePassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Change Password'**
-  String get changePassword;
-
-  /// No description provided for @downloadMyData.
-  ///
-  /// In en, this message translates to:
-  /// **'Download My Data'**
-  String get downloadMyData;
-
-  /// No description provided for @deleteAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete Account'**
-  String get deleteAccount;
-
-  /// No description provided for @aboutLocalPulse.
-  ///
-  /// In en, this message translates to:
-  /// **'About Local Pulse'**
-  String get aboutLocalPulse;
-
-  /// No description provided for @privacyPolicy.
-  ///
-  /// In en, this message translates to:
-  /// **'Privacy Policy'**
-  String get privacyPolicy;
-
-  /// No description provided for @termsOfService.
-  ///
-  /// In en, this message translates to:
-  /// **'Terms of Service'**
-  String get termsOfService;
-
   /// No description provided for @helpSupport.
   ///
   /// In en, this message translates to:
   /// **'Help & Support'**
   String get helpSupport;
 
-  /// No description provided for @total.
+  /// No description provided for @about.
   ///
   /// In en, this message translates to:
-  /// **'Total'**
-  String get total;
+  /// **'About'**
+  String get about;
 
-  /// No description provided for @pending.
+  /// No description provided for @logout.
   ///
   /// In en, this message translates to:
-  /// **'Pending'**
-  String get pending;
-
-  /// No description provided for @noReportsYet.
-  ///
-  /// In en, this message translates to:
-  /// **'No Reports Yet'**
-  String get noReportsYet;
-
-  /// No description provided for @startReporting.
-  ///
-  /// In en, this message translates to:
-  /// **'Start by reporting your first civic issue'**
-  String get startReporting;
-
-  /// No description provided for @issueDetails.
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Details'**
-  String get issueDetails;
-
-  /// No description provided for @category.
-  ///
-  /// In en, this message translates to:
-  /// **'Category'**
-  String get category;
-
-  /// No description provided for @location.
-  ///
-  /// In en, this message translates to:
-  /// **'Location'**
-  String get location;
-
-  /// No description provided for @reported.
-  ///
-  /// In en, this message translates to:
-  /// **'Reported'**
-  String get reported;
-
-  /// No description provided for @issueId.
-  ///
-  /// In en, this message translates to:
-  /// **'Issue ID'**
-  String get issueId;
-
-  /// No description provided for @provideFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Provide Feedback'**
-  String get provideFeedback;
-
-  /// No description provided for @yourFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Your Feedback'**
-  String get yourFeedback;
-
-  /// No description provided for @rateResolution.
-  ///
-  /// In en, this message translates to:
-  /// **'Rate Resolution'**
-  String get rateResolution;
-
-  /// No description provided for @howSatisfied.
-  ///
-  /// In en, this message translates to:
-  /// **'How satisfied are you with the resolution?'**
-  String get howSatisfied;
-
-  /// No description provided for @poor.
-  ///
-  /// In en, this message translates to:
-  /// **'Poor'**
-  String get poor;
-
-  /// No description provided for @excellent.
-  ///
-  /// In en, this message translates to:
-  /// **'Excellent'**
-  String get excellent;
-
-  /// No description provided for @additionalComments.
-  ///
-  /// In en, this message translates to:
-  /// **'Additional Comments (Optional)'**
-  String get additionalComments;
-
-  /// No description provided for @yourFeedbackPlaceholder.
-  ///
-  /// In en, this message translates to:
-  /// **'Tell us about your experience...'**
-  String get yourFeedbackPlaceholder;
+  /// **'Logout'**
+  String get logout;
 
   /// No description provided for @cancel.
   ///
@@ -788,47 +239,413 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
-  /// No description provided for @submit.
+  /// No description provided for @close.
   ///
   /// In en, this message translates to:
-  /// **'Submit'**
-  String get submit;
+  /// **'Close'**
+  String get close;
 
-  /// No description provided for @issuesMap.
+  /// No description provided for @save.
   ///
   /// In en, this message translates to:
-  /// **'Issues Map'**
-  String get issuesMap;
+  /// **'Save'**
+  String get save;
 
-  /// No description provided for @allIssues.
+  /// No description provided for @citizenReporter.
   ///
   /// In en, this message translates to:
-  /// **'All Issues'**
-  String get allIssues;
+  /// **'Citizen Reporter'**
+  String get citizenReporter;
 
-  /// No description provided for @filterIssues.
+  /// No description provided for @alerts.
   ///
   /// In en, this message translates to:
-  /// **'Filter Issues'**
-  String get filterIssues;
+  /// **'Alerts'**
+  String get alerts;
 
-  /// No description provided for @legend.
+  /// No description provided for @communityAlerts.
   ///
   /// In en, this message translates to:
-  /// **'Legend'**
-  String get legend;
+  /// **'Community Alerts'**
+  String get communityAlerts;
+
+  /// No description provided for @recentAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Alerts'**
+  String get recentAlerts;
+
+  /// No description provided for @noRecentAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'No recent alerts'**
+  String get noRecentAlerts;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get viewAll;
+
+  /// No description provided for @alertDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert Details'**
+  String get alertDetails;
+
+  /// No description provided for @shareAlert.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Alert'**
+  String get shareAlert;
+
+  /// No description provided for @reportRelatedIssue.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Related Issue'**
+  String get reportRelatedIssue;
+
+  /// No description provided for @alertInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert Information'**
+  String get alertInformation;
+
+  /// No description provided for @type.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get type;
+
+  /// No description provided for @priority.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get priority;
+
+  /// No description provided for @posted.
+  ///
+  /// In en, this message translates to:
+  /// **'Posted'**
+  String get posted;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @expires.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires'**
+  String get expires;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @actions.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get actions;
+
+  /// No description provided for @expired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get expired;
+
+  /// No description provided for @read.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get read;
+
+  /// No description provided for @unread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get unread;
+
+  /// No description provided for @generalNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'General Notifications'**
+  String get generalNotifications;
+
+  /// No description provided for @pushNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Push Notifications'**
+  String get pushNotifications;
+
+  /// No description provided for @pushNotificationsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive notifications on your device'**
+  String get pushNotificationsDesc;
+
+  /// No description provided for @emailNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Notifications'**
+  String get emailNotifications;
+
+  /// No description provided for @emailNotificationsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive notifications via email'**
+  String get emailNotificationsDesc;
+
+  /// No description provided for @issueNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Issue Notifications'**
+  String get issueNotifications;
+
+  /// No description provided for @issueUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Issue Updates'**
+  String get issueUpdates;
+
+  /// No description provided for @issueUpdatesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Get notified when your issues are updated'**
+  String get issueUpdatesDesc;
+
+  /// No description provided for @communityAlertsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive alerts about issues in your area'**
+  String get communityAlertsDesc;
+
+  /// No description provided for @maintenanceNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Notifications'**
+  String get maintenanceNotifications;
+
+  /// No description provided for @maintenanceNotificationsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Get notified about scheduled maintenance'**
+  String get maintenanceNotificationsDesc;
+
+  /// No description provided for @soundVibration.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound & Vibration'**
+  String get soundVibration;
+
+  /// No description provided for @sound.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound'**
+  String get sound;
+
+  /// No description provided for @soundDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Play sound for notifications'**
+  String get soundDesc;
+
+  /// No description provided for @vibration.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibration'**
+  String get vibration;
+
+  /// No description provided for @vibrationDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Vibrate for notifications'**
+  String get vibrationDesc;
+
+  /// No description provided for @saveSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Settings'**
+  String get saveSettings;
+
+  /// No description provided for @saveAllSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Save All Settings'**
+  String get saveAllSettings;
+
+  /// No description provided for @saving.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving...'**
+  String get saving;
+
+  /// No description provided for @notificationSettingsSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings saved!'**
+  String get notificationSettingsSaved;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferences;
+
+  /// No description provided for @profileUpdatedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully!'**
+  String get profileUpdatedSuccessfully;
+
+  /// No description provided for @filterByType.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by type: '**
+  String get filterByType;
+
+  /// No description provided for @allTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All types'**
+  String get allTypes;
+
+  /// No description provided for @showOnlyUnreadAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Show only unread alerts'**
+  String get showOnlyUnreadAlerts;
+
+  /// No description provided for @noUnreadAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'No unread alerts'**
+  String get noUnreadAlerts;
+
+  /// No description provided for @noAlertsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No alerts available'**
+  String get noAlertsAvailable;
+
+  /// No description provided for @checkBackLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Check back later for community updates'**
+  String get checkBackLater;
+
+  /// No description provided for @emergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency'**
+  String get emergency;
+
+  /// No description provided for @maintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get maintenance;
+
+  /// No description provided for @weather.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather'**
+  String get weather;
+
+  /// No description provided for @traffic.
+  ///
+  /// In en, this message translates to:
+  /// **'Traffic'**
+  String get traffic;
+
+  /// No description provided for @community.
+  ///
+  /// In en, this message translates to:
+  /// **'Community'**
+  String get community;
+
+  /// No description provided for @safety.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety'**
+  String get safety;
+
+  /// No description provided for @water.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get water;
+
+  /// No description provided for @electricity.
+  ///
+  /// In en, this message translates to:
+  /// **'Electricity'**
+  String get electricity;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @critical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get critical;
+
+  /// No description provided for @high.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get high;
+
+  /// No description provided for @medium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get medium;
+
+  /// No description provided for @low.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get low;
 
   /// No description provided for @loading.
   ///
   /// In en, this message translates to:
   /// **'Loading...'**
   String get loading;
-
-  /// No description provided for @retry.
-  ///
-  /// In en, this message translates to:
-  /// **'Retry'**
-  String get retry;
 
   /// No description provided for @error.
   ///
@@ -842,137 +659,44 @@ abstract class AppLocalizations {
   /// **'Success'**
   String get success;
 
-  /// No description provided for @pleaseEnterEmail.
+  /// No description provided for @refresh.
   ///
   /// In en, this message translates to:
-  /// **'Please enter your email'**
-  String get pleaseEnterEmail;
-
-  /// No description provided for @pleaseEnterValidEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid email'**
-  String get pleaseEnterValidEmail;
-
-  /// No description provided for @pleaseEnterPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter your password'**
-  String get pleaseEnterPassword;
-
-  /// No description provided for @passwordTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters'**
-  String get passwordTooShort;
-
-  /// No description provided for @pleaseEnterName.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter your full name'**
-  String get pleaseEnterName;
-
-  /// No description provided for @nameTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Name must be at least 2 characters'**
-  String get nameTooShort;
-
-  /// No description provided for @pleaseEnterAge.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter your age'**
-  String get pleaseEnterAge;
-
-  /// No description provided for @invalidAge.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid age'**
-  String get invalidAge;
-
-  /// No description provided for @pleaseSelectCity.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select your city'**
-  String get pleaseSelectCity;
-
-  /// No description provided for @pleaseSelectCategory.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select a category'**
-  String get pleaseSelectCategory;
-
-  /// No description provided for @pleaseSelectSubcategory.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select a subcategory'**
-  String get pleaseSelectSubcategory;
-
-  /// No description provided for @pleaseSelectLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select a location'**
-  String get pleaseSelectLocation;
-
-  /// No description provided for @pleaseAddImages.
-  ///
-  /// In en, this message translates to:
-  /// **'Please add at least one image'**
-  String get pleaseAddImages;
-
-  /// No description provided for @titleTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Title must be at least 5 characters'**
-  String get titleTooShort;
-
-  /// No description provided for @titleTooLong.
-  ///
-  /// In en, this message translates to:
-  /// **'Title must be less than 100 characters'**
-  String get titleTooLong;
-
-  /// No description provided for @descriptionTooShort.
-  ///
-  /// In en, this message translates to:
-  /// **'Description must be at least 10 characters'**
-  String get descriptionTooShort;
-
-  /// No description provided for @descriptionTooLong.
-  ///
-  /// In en, this message translates to:
-  /// **'Description must be less than 1000 characters'**
-  String get descriptionTooLong;
+  /// **'Refresh'**
+  String get refresh;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
-  const _AppLocalizationsDelegate();
+class _SDelegate extends LocalizationsDelegate<S> {
+  const _SDelegate();
 
   @override
-  Future<AppLocalizations> load(Locale locale) {
-    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+  Future<S> load(Locale locale) {
+    return SynchronousFuture<S>(lookupS(locale));
   }
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'hi'].contains(locale.languageCode);
+      <String>['en', 'es', 'fr', 'hi'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsDelegate old) => false;
+  bool shouldReload(_SDelegate old) => false;
 }
 
-AppLocalizations lookupAppLocalizations(Locale locale) {
+S lookupS(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en':
-      return AppLocalizationsEn();
+      return SEn();
+    case 'es':
+      return SEs();
+    case 'fr':
+      return SFr();
     case 'hi':
-      return AppLocalizationsHi();
+      return SHi();
   }
 
   throw FlutterError(
-      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'S.delegate failed to load unsupported locale "$locale". This is likely '
       'an issue with the localizations generation tool. Please file an issue '
       'on GitHub with a reproducible sample app and the gen-l10n configuration '
       'that was used.');

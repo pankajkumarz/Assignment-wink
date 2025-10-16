@@ -8,9 +8,9 @@ class FirebaseService {
   
   FirebaseService._();
 
-  Future<void> initialize() async {
+  Future<void> initialize(FirebaseOptions options) async {
     try {
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(options: options);
       
       if (!kIsWeb) {
         await _initializeMessaging();

@@ -16,7 +16,7 @@ class AuthorityDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => di.sl<IssuesBloc>()
-        ..add(const PublicIssuesWatchRequested()),
+        ..add(PublicIssuesWatchRequested()),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Authority Dashboard'),
@@ -100,7 +100,7 @@ class AuthorityDashboard extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             context.read<IssuesBloc>().add(
-                                  const PublicIssuesWatchRequested(),
+                                  PublicIssuesWatchRequested(),
                                 );
                           },
                           child: const Text('Retry'),
@@ -134,7 +134,7 @@ class AuthorityDashboard extends StatelessWidget {
 
     return RefreshIndicator(
       onRefresh: () async {
-        context.read<IssuesBloc>().add(const PublicIssuesWatchRequested());
+        context.read<IssuesBloc>().add(PublicIssuesWatchRequested());
       },
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

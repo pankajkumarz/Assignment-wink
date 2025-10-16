@@ -46,3 +46,6 @@ app.*.map.json
 # API Keys and Sensitive Configuration
 ../api_keys.dart
 android/app/src/main/res/values/api_keys.xml
+android/app/google-services.json
+lib/firebase_options.dart
+lib/core/config/app_config.dart

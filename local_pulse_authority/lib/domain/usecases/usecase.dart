@@ -1,25 +1,25 @@
 import '../../core/utils/typedef.dart';
 
-abstract class UseCase<Type, Params> {
+abstract class UseCase<T, Params> {
   const UseCase();
   
-  ResultFuture<Type> call(Params params);
+  ResultFuture<T> call(Params params);
 }
 
-abstract class UseCaseWithoutParams<Type> {
+abstract class UseCaseWithoutParams<T> {
   const UseCaseWithoutParams();
   
-  ResultFuture<Type> call();
+  ResultFuture<T> call();
 }
 
-abstract class StreamUseCase<Type, Params> {
+abstract class StreamUseCase<T, Params> {
   const StreamUseCase();
   
-  Stream<Type> call(Params params);
+  Stream<T> call(Params params);
 }
 
-abstract class StreamUseCaseWithoutParams<Type> {
+abstract class StreamUseCaseWithoutParams<T> {
   const StreamUseCaseWithoutParams();
   
-  Stream<Type> call();
+  Stream<T> call();
 }
